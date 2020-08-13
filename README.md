@@ -8,7 +8,7 @@
   <img src="https://img.shields.io/badge/Visual Studio Code-blue" />
 </p>
 
- 📌personal study repo
+ 📌 personal study repo
 
 ### ✅ 1 week
 
