@@ -4,7 +4,17 @@ let User = require('../models/user');
 let util = require('../modules/util');
 let statusCode = require('../modules/statusCode');
 let resMessage = require('../modules/responseMessage');
+const crypto = require('crypto');
 
+const encrypt = (salt, password) => {
+    return new Promise((res, rej) => {
+        crypto.pbkdf2(password, salt.toString(), 1, 32, 'sha512', (err, derivedKey) => {
+            if (err) throw err;
+            const digest = derivedKey.toString('hex');
+            res(digest);
+        });
+    });
+}
 /* 
     ✔️ sign up
     METHOD : POST
@@ -32,12 +42,18 @@ router.post('/signup', async (req, res) => {
             .send(util.fail(statusCode.BAD_REQUEST, resMessage.ALREADY_ID));
         return;
     }
+    // password hash 해서 salt 값과 함께 저장하기
+    const salt = crypto.randomBytes(32).toString('hex');
+    const digest = await encrypt(salt, password.toString());
+
     User.push({
         id,
         name,
-        password,
+        digest,
         email
     });
+    console.log(User)
+
     res.status(statusCode.OK)
         .send(util.success(statusCode.OK, resMessage.CREATED_USER, {userId: id}));
 });
