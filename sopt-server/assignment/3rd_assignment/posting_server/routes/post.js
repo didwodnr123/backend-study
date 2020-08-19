@@ -56,6 +56,7 @@ router.post('/', async (req, res) => {
 
 })
 
+// 게시글 고유 id값을 가진 게시글을 수정
 router.put('/:id', async (req, res) => {
     const {
         id,
@@ -78,7 +79,26 @@ router.put('/:id', async (req, res) => {
     console.log(Posts)
 
     res.status(statusCode.OK)
-        .send(util.success(statusCode.OK, resMessage.POSTING_SUCCESS, {postId: id}))
+        .send(util.success(statusCode.OK, resMessage.POSTING_SUCCESS, {modifiedId: id}))
+})
+
+
+router.delete('/:id', async (req, res) =>{
+    const id = req.params.id
+
+    if(!id){
+        res.status(statusCode.BAD_REQUEST).send(util.fail(statusCode.BAD_REQUEST, resMessage.NULL_VALUE))
+        return
+    }
+
+    if(Posts.filter(post => post.id == id) === undefined){
+        res.status(statusCode.BAD_REQUEST).send(util.fail(statusCode.BAD_REQUEST, resMessage.OUT_OF_VALUE))
+        return
+    }
+
+    Posts.pop(id)
+
+    res.status(statusCode.OK).send(util.success(statusCode.OK, resMessage.POSTING_SUCCESS, {deletedId: id}))
 })
 
 module.exports = router
