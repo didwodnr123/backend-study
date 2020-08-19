@@ -56,4 +56,29 @@ router.post('/', async (req, res) => {
 
 })
 
+router.put('/:id', async (req, res) => {
+    const {
+        id,
+        title,
+        text
+    } = req.body
+    
+    if(!id || !title || !text){
+        res.status(statusCode.BAD_REQUEST).send(statusCode.BAD_REQUEST, resMessage.NULL_VALUE)
+        return
+    }
+
+    Posts.pop(id)
+
+    Posts.push({
+        id,
+        title,
+        text
+    })
+    console.log(Posts)
+
+    res.status(statusCode.OK)
+        .send(util.success(statusCode.OK, resMessage.POSTING_SUCCESS, {postId: id}))
+})
+
 module.exports = router
