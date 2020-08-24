@@ -7,10 +7,10 @@
   <img src="https://img.shields.io/badge/Visual Studio Code-blue" />
 </p>
 
+###  📌 personal study repo
 
- 📌 personal study repo
+--------
 
-<hr>
 📝 **Javascirpt grammar** : basic.js 에 정리
 
 📝 **JSON** : Javascript Object Notation
