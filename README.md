@@ -1,4 +1,4 @@
-<h1 align="center"> Server Study  🗄 </h1>
+<h3 align="center">server study</h3>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Server-black" />
@@ -7,7 +7,7 @@
   <img src="https://img.shields.io/badge/Visual Studio Code-blue" />
 </p>
 
-> 📌 personal study repo
+> 📌 personal study Repo
 
 <!-- Contents -->
 
@@ -19,8 +19,6 @@
 
 
 
-
-
 <!-- overview -->
 
 ## Overview
@@ -28,8 +26,6 @@
 📱Client : **서비스 요청자** -> 서비스를 사용하는 사용자
 
 🗄 Server: **서비스 자원의 제공자** -> 네트워크를 통해 클라이언트에게 서비스 및 정보를 제공, 다른 서버에 요청 보내기도 함
-
-
 
 
 
@@ -106,8 +102,6 @@ function hoisting(){
 
 
 
-
-
 <!-- json -->
 
 ## JSON
@@ -147,4 +141,6 @@ var 객체이름 = [
 ```
 
 ❗️가끔 json 객체와 배열이 헷갈릴 때가 있다...
+
+
 
