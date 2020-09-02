@@ -190,12 +190,14 @@ var 객체이름 = [
 
 ***Blocking & Non-Blocking?***
 
-### Blocking (동기)
+<br>
+
+**Blocking (동기)**
 
 - 요청을 하고 완료를 할 때 까지 기다리는 방식
 - 백그라운드 작업 완료 여부를 계속 확인
 
-### Non-Blocking (비동기)
+**Non-Blocking (비동기)**
 
 - I/O 작업이 진행되는 동안 작업이 멈추지 않고 다음 작업 수행
 - **요청을 하고 바로 제어권을 돌려 받는 방식**
@@ -241,7 +243,7 @@ this is a sample text
 
 <br>
 
-<h3>Promise</h3>
+**Promise**
 
 - ES6부터 공식적으로 포함된 흐름 제어 패턴
 - 내부적 예외처리 구조
@@ -285,7 +287,7 @@ var willIGetNewPhone = new Promise((resolve, reject) => {
 
 <br>
 
-### Async
+**Async**
 
 - ES7부터 지원하는 자바스크립트 비동기 패턴
 - 장황한 **promise** 코드를 한번 더 깔끔하게 줄여줌
@@ -312,7 +314,9 @@ var willIGetNewPhone = new Promise((resolve, reject) => {
 - 재사용에 용이함
 - Node에서는 각 파일을 모듈화, **1파일 = 1모듈**
 
-### crypto
+<br>
+
+**crypto**
 
 - **문자열을 암호화, 복호화, 해싱하는 모듈**
 - 복호화할 수 없는 암호화 방식
@@ -329,7 +333,9 @@ crypto.pbkdf2('secret', 'salt', 100000, 64, 'sha512', (err, derivedKey) => {
 })
 ```
 
-### File System Module
+<br>
+
+**File System Module**
 
 - 파일 생성, 삭제, 읽기, 쓰기
 - 폴더 생성, 삭제
@@ -385,7 +391,10 @@ npm start
 
 > 5. localhost:3000 접속 후 Express 뜨면 성공
 
-### Routing
+<br>
+
+**Routing**
 
 - URI 및 특정한 HTTP 요청 메소드 (GET, POST 등) 인 특정 엔드포인트에 대한 클라이언트 요청에 애플리케이션이 응답하는 방법을 결정
 - 한 파일에 모든 라우팅을 관리하는건 지양한다
+
