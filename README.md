@@ -16,6 +16,8 @@
 - [Javascript](#javascript)
 - [JSON](#json)
 
+
+
 <!-- overview -->
 
 ## Overview
@@ -25,6 +27,8 @@
 🗄 Server: **서비스 자원의 제공자** -> 네트워크를 통해 클라이언트에게 서비스 및 정보를 제공, 다른 서버에 요청 보내기도 함
 
 
+
+<!-- javascript -->
 
 ## Javascript 
 
@@ -96,6 +100,8 @@ function hoisting(){
 > ❗️함수 선언식은 기존 다른 언어와 비슷한 함수 선언 구조인데, JS에서는 화살표 함수(함수 표현식)를 사용하는 것 같다.
 
 
+
+<!-- json -->
 
 ## JSON
 
