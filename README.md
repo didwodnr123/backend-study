@@ -6,7 +6,8 @@
   <img src="https://img.shields.io/badge/Express-purple" />
   <img src="https://img.shields.io/badge/Visual Studio Code-blue" />
 </p>
->  📌 personal study repo
+
+> 📌 personal study repo
 
 <!-- Contents -->
 
