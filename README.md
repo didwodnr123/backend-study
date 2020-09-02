@@ -9,30 +9,25 @@
 
 > 📌  personal study Repo
 >
-> 🗂  Reference: 생활코딩, 26th Server seminar 자료
+> 🗂  Reference: 생활코딩, 26th Server seminar 자료, Node.js 공식 홈페이지
 
 <!-- Contents -->
-
-## Contents
+<h2>Contents</h2>
 
 - [Overview](#overview)
 - [Javascript](#javascript)
 - [JSON](#json)
-
-
+- [Node.js](#nodejs)
 
 <!-- overview -->
-
-## Overview
-
+<h2>Overview</h2>
+<div>
 📱  Client : **서비스 요청자** -> 서비스를 사용하는 사용자
 
 🗄  Server: **서비스 자원의 제공자** -> 네트워크를 통해 클라이언트에게 서비스 및 정보를 제공, 다른 서버에 요청 보내기도 함
-
-
+</div>
 
 <!-- javascript -->
-
 ## Javascript 
 
 - 코드를 한 줄씩 번역하고 실행 
@@ -146,5 +141,116 @@ var 객체이름 = [
 
 
 
-<!---->
+<!--nodejs-->
 
+## Node.js
+
+- 자바스크립트 기반 서버 플랫폼
+- 이벤트 기반
+- 싱글 스레드 기반
+- non-blocking I/O
+- 비동기 방식
+
+> 프로그램 언어  ❌
+>
+> 프레임워크  ❌
+>
+> **자바스크립트를 실행시키는 *런타임 환경***  ⭕️
+
+
+
+### Express
+
+- NodeJS 기반의 웹 어플리케이션 ***프레임 워크***
+- 서버를 구축하기 쉽게 틀을 제공
+
+
+
+**Event-Driven**
+
+- 이벤트가 발생할 때, 미리 지정해둔 작업을 수행하는 방식
+
+![스크린샷 2020-09-02 오후 10 04 54](https://user-images.githubusercontent.com/56633607/91986986-6380f980-ed68-11ea-9d87-4efc0e0e5b6e.png)
+
+> 출처 : Node.js 공식 홈페이지
+
+
+
+<!--flowcontrol-->
+
+## Flow Control (흐름 제어)
+
+***Blocking & Non-Blocking?***
+
+### Blocking (동기)
+
+- 요청을 하고 완료를 할 때 까지 기다리는 방식
+- 백그라운드 작업 완료 여부를 계속 확인
+
+### Non-Blocking (비동기)
+
+- I/O 작업이 진행되는 동안 작업이 멈추지 않고 다음 작업 수행
+- **요청을 하고 바로 제어권을 돌려 받는 방식**
+
+> Blocking
+
+```javascript
+var fs = require("fs");
+var data = fs.readFileSync('input.txt');
+
+console.log(data.toString());
+console.log("Program Ended");		
+```
+
+> result
+
+```
+this is a sample text
+Program Ended
+```
+
+
+
+> Non-Blocking
+
+```javascript
+var fs = require("fs");
+
+fs.readFile('input.txt', function (err, data) {
+   if (err) return console.error(err);
+   console.log(data.toString());
+});
+
+console.log("Program Ended");
+```
+
+> result
+
+``` 
+Program Ended
+this is a sample text
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--module-->
+
+<!--express-->
