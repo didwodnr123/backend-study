@@ -6,13 +6,11 @@
   <img src="https://img.shields.io/badge/Express-purple" />
   <img src="https://img.shields.io/badge/Visual Studio Code-blue" />
 </p>
-###  📌 personal study repo
-
----
+>  📌 personal study repo
 
 <!-- Contents -->
 
-### Contents
+## Contents
 
 - [Overview](#overview)
 - [Javascript](#javascript)
@@ -20,17 +18,15 @@
 
 <!-- overview -->
 
-### ☑️ Overview
+## Overview
 
-📱client : **서비스 요청자** -> 서비스를 사용하는 사용자
+📱Client : **서비스 요청자** -> 서비스를 사용하는 사용자
 
 🗄 Server: **서비스 자원의 제공자** -> 네트워크를 통해 클라이언트에게 서비스 및 정보를 제공, 다른 서버에 요청 보내기도 함
 
 
 
-### Javascript 
-
-----
+## Javascript 
 
 - 코드를 한 줄씩 번역하고 실행 
 - 실행속도가 컴파일 언어에 비해 느림
@@ -101,9 +97,7 @@ function hoisting(){
 
 
 
-### JSON
-
----
+## JSON
 
 **Javascript Object Notation**
 
