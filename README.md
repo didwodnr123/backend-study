@@ -22,8 +22,6 @@
 - [JSON](#json)
 - [Node.js](#nodejs)
 
-
-
 <br/>
 
 <!-- overview -->
@@ -32,8 +30,6 @@
 📱  Client : **서비스 요청자** -> 서비스를 사용하는 사용자
 
 🗄  Server: **서비스 자원의 제공자** -> 네트워크를 통해 클라이언트에게 서비스 및 정보를 제공, 다른 서버에 요청 보내기도 함
-
-
 
 <br/>
 
@@ -108,8 +104,6 @@ function hoisting(){
 >
 > ❗️함수 선언식은 기존 다른 언어와 비슷한 함수 선언 구조인데, JS에서는 화살표 함수(함수 표현식)를 사용하는 것 같다.
 
-
-
 <br/>
 
 <!-- json -->
@@ -151,8 +145,6 @@ var 객체이름 = [
 ```
 
 ❗️가끔 json 객체와 배열이 헷갈릴 때가 있다...
-
-
 
 <br/>
 
@@ -224,7 +216,7 @@ this is a sample text
 Program Ended
 ```
 
-
+<br/>
 
 > Non-Blocking
 
@@ -246,26 +238,159 @@ Program Ended
 this is a sample text
 ```
 
+<br>
 
+<h3>Promise</h3>
 
+- ES6부터 공식적으로 포함된 흐름 제어 패턴
+- 내부적 예외처리 구조
 
+> Fulfilled (이행)
 
+```javascript
+new Promise(function(resolve, reject) {
+	resolve();
+})
+```
 
+> Rejected (실패)
 
+```javascript
+new Promise(function(resolve, reject){	
+	reject();
+})
+```
 
+<br>
 
+> practice
 
+```javascript
+let isMomHappy = false;
+let phone = {
+    brand: 'Samsung',
+    color: 'black'
+}
 
+var willIGetNewPhone = new Promise((resolve, reject) => {
+    if(isMomHappy){
+        resolve(console.log(phone));
+    }else{
+        //reject(console.error());
+        reject(console.log(new Error('Mom is not happy')))
+    }
+})
+```
 
+<br>
 
+### Async
 
+- ES7부터 지원하는 자바스크립트 비동기 패턴
+- 장황한 **promise** 코드를 한번 더 깔끔하게 줄여줌
+- 동기 코드와 매---우 유사함
 
+> Async
 
+- promise를 사용하지 않고도 효과적으로 콜백헬 해결
+- **async는 암묵적으로 promise를 반환**
 
+> Await
 
+- promise를 기다림 (성공 or 실패)
+- async로 정의된 내부에서만 사용 가능
 
-
+<br>
 
 <!--module-->
 
+## Module
+
+- 독립된 기능을 하는 함수나 변수들의 집합
+- 모듈 자체가 하나의 프로그램이면서 다른 프로그램의 **부품**으로 사용할 수 있음
+- 재사용에 용이함
+- Node에서는 각 파일을 모듈화, **1파일 = 1모듈**
+
+<br>
+
+### crypto
+
+- **문자열을 암호화, 복호화, 해싱하는 모듈**
+- 복호화할 수 없는 암호화 방식
+- 비밀번호 암호화에 주로 사용
+- 주로 해시 기법을 사용
+
+> Example
+
+```javascript
+const crypto = require('crypto')
+crypto.pbkdf2('secret', 'salt', 100000, 64, 'sha512', (err, derivedKey) => {
+	if(err) throw err;
+	console.log(derivedKey.toString('hex'));	
+})
+```
+
+<br>
+
+### File System Module
+
+- 파일 생성, 삭제, 읽기, 쓰기
+- 폴더 생성, 삭제
+
+> 비동기 방식
+>
+> > fs.readFile() 
+> >
+> > fs.writeFile()
+
+> 동기 방식
+>
+> > fs.readFileSync() 
+> >
+> > fs.writeFileSync()
+
+<br>
+
 <!--express-->
+
+## Express
+
+- Node를 위한 빠르고 간결한 웹 프레임워크
+- HTTP 요청에 대해 라우팅 및 미들웨어 기능 제공
+
+> 1. Express 설치
+
+```
+npm install express -g
+```
+
+> 2. 폴더 정해서 express 프로젝트 생성기 생성
+
+```
+npm install -g express-generator
+```
+
+>3. express 프로젝트 생성
+
+```
+express [project name]
+```
+
+> 4. 코드 작성 후 터미널에서
+
+```
+npm install
+```
+
+``` 
+npm start
+```
+
+> 5. localhost:3000 접속 후 Express 뜨면 성공
+
+<br>
+
+### Routing
+
+- URI 및 특정한 HTTP 요청 메소드 (GET, POST 등) 인 특정 엔드포인트에 대한 클라이언트 요청에 애플리케이션이 응답하는 방법을 결정
+- 한 파일에 모든 라우팅을 관리하는건 지양한다
