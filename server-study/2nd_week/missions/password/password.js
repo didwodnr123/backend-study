@@ -10,6 +10,7 @@ const encrypt = (salt, password) => {
         });
     });
 }
+
 // __dirname을 사용하면 자동으로 경로를 가져온다.
 fs.readFile(`${__dirname}/password.txt`, async (err, data) => {
     if (err) return console.log(err.message);
