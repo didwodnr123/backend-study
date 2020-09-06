@@ -24,6 +24,9 @@
 - [Flow Control](#flowcontrol)
 - [Module](#module)
 - [Express](#express)
+- [HTTP](#http)
+- [CRUD](#crud)
+- [AWS EC2](#awsec2)
 
 <br/>
 
@@ -403,3 +406,73 @@ npm start
 - URI 및 특정한 HTTP 요청 메소드 (GET, POST 등) 인 특정 엔드포인트에 대한 클라이언트 요청에 애플리케이션이 응답하는 방법을 결정
 - 한 파일에 모든 라우팅을 관리하는건 지양한다
 
+<br>
+
+<!--http-->
+
+## HTTP
+
+> Hyper Text Transfer Protocol
+
+- TCP/IP & UDP 프로토콜을 사용
+- 80번 포트 사용
+- HTTPS는 433번 포트 사용
+
+**Stateless Protocol**
+
+- 서버가 두 요청간에 어떠한 데이터(상태)도 유지하지 않음
+  - Cookie, Session, Token 등을 사용하여 극복❗
+
+> Note: ❗HTTP 통신은 기본적으로 **Request** <===> **Response** 관계를 가진다.
+
+<br>
+
+### HTTP STATUS CODE
+
+#### 데이터 전달 방식
+
+- **2xx** : 성공 상태
+- **3xx** : 리다이렉션을 알리는 상태
+- **4xx** : 요청 요류
+- **5xx** : 서버 내부 오류
+
+> ❗중요한 응답 코드❗
+>
+> - 2xx 
+>   - 200 : OK
+>   - 204 : No Content
+> - 3xx
+>   - 304 : Not Modified
+> - 4xx 
+>   - 400 : Bad Request
+>   - 401 : Unauthorized
+>   - 404  : Not found
+> - 5xx
+>   - 500 :  Internal Server Error
+
+#### Request & Response
+
+##### Request
+
+1. URL
+   1. param : https://abc.com/post/33
+   2. query : https://abc.com/post?id=jaeuk
+2. Header
+   - 부가적인 정보를 전송
+3. Body
+   - xml, JSON, Multi Form 등의 데이터
+
+##### Response
+
+1. Body
+   - xml, JSON, Multi Form 등의 데이터
+
+<br>
+
+<!--crud-->
+
+## CRUD
+
+
+
+<!--awsec2-->
