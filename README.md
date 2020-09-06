@@ -450,9 +450,9 @@ npm start
 > - 5xx
 >   - 500 :  Internal Server Error
 
-#### Request & Response
+### Request & Response
 
-##### Request
+#### Request
 
 1. URL
    1. param : https://abc.com/post/33
@@ -462,7 +462,7 @@ npm start
 3. Body
    - xml, JSON, Multi Form 등의 데이터
 
-##### Response
+#### Response
 
 1. Body
    - xml, JSON, Multi Form 등의 데이터
@@ -472,6 +472,13 @@ npm start
 <!--crud-->
 
 ## CRUD
+
+>  대부분의 컴퓨터 소프트웨어가 가지는 기본적인 데이터 처리 기능
+
+1. **CREATE**
+2. **READ**
+3. **UPDATE**
+4. **DELETE**
 
 
 
