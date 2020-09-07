@@ -28,6 +28,8 @@
 - [CRUD](#crud)
 - [AWS EC2](#awsec2)
 
+📌 [Practice](./PRACTICE.md)
+
 <br/>
 
 <!-- overview -->
@@ -480,6 +482,38 @@ npm start
 3. **UPDATE**
 4. **DELETE**
 
+| CRUD   | ACTION | HTTP METHOD | SQL    |
+| ------ | ------ | ----------- | ------ |
+| CREATE | 생성   | POST        | INSERT |
+| READ   | 조회   | GET         | SELECT |
+| UPDATE | 수정   | PUT         | UPDATE |
+| DELETE | 삭제   | DELETE      | DELETE |
+
+### router.METHOD(...)
+
+```javascript
+router.METHOD( 'path', (req, res) => {...} )
+```
+
+- **METHOD**
+  - .get()
+  - .post()
+- **path**
+  - 접근할 경로 설정
+- **req**
+  - request로 전달받은 데이터들이 담겨있다.
+    - req.query
+    - req.params
+    - req.headers
+    - req.body
+    - req.file
+- **res**
+  - response로 전달할 데이터를 담는다.
+    - res.status(xxx).send(json)
+      - xxx : status code를 정수로 입력
+      - json : json 형식으로 response body에 입력 
+
 
 
 <!--awsec2-->
+
