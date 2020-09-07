@@ -26,7 +26,7 @@
 - [Express](#express)
 - [HTTP](#http)
 - [CRUD](#crud)
-- [AWSEC2](#awsec2)
+- [AWS EC2](#aws-ec2)
 
 📌 [Practice](./PRACTICE.md)
 
