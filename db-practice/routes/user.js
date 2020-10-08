@@ -12,18 +12,19 @@ router.post('/signup', async (req, res) => {
         password,
         email
     } = req.body;
-    
+
     if (!id || !name || !password || !email) {
         res.status(statusCode.BAD_REQUEST)
             .send(util.fail(statusCode.BAD_REQUEST, resMessage.NULL_VALUE));
         return;
     }
     // 사용자 중인 아이디가 있는지 확인
-    if (User.checkUser(user)) {
-        res.status(statusCode.BAD_REQUEST)
-            .send(util.fail(statusCode.BAD_REQUEST, resMessage.ALREADY_ID));
-        return;
-    }
+    // if (User.checkUser(id)) {
+    //     res.status(statusCode.BAD_REQUEST)
+    //         .send(util.fail(statusCode.BAD_REQUEST, resMessage.ALREADY_ID));
+    //     return;
+    // }
+
     const salt = 'dfw23EFVR3fefnd68FW3r4343';
     // User.push({id, name, password, email});
     const idx = await User.signup(id, name, password, salt, email);
@@ -41,24 +42,24 @@ router.post('/signin', async (req, res) => {
         id,
         password
     } = req.body;
+
     if (!id || !password) {
         res.status(statusCode.BAD_REQUEST)
             .send(util.fail(statusCode.BAD_REQUEST, resMessage.NULL_VALUE));
         return;
     }
-    const user = User.filter(user => user.id == id);
-    if (user.length == 0) {
-        res.status(statusCode.BAD_REQUEST)
-            .send(util.fail(statusCode.BAD_REQUEST, resMessage.NO_USER));
-        return;
+
+    const idx = await User.signin(id, password);
+    if (idx === -1) {
+        return res.status(statusCode.DB_ERROR)
+            .send(util.fail(statusCode.DB_ERROR, resMessage.DB_ERROR));
+    } 
+
+    if (idx){
+        res.status(statusCode.OK).send(util.success(statusCode.OK, resMessage.LOGIN_SUCCESS));        
+    } else{
+        res.status(statusCode.BAD_REQUEST).send(util.success(statusCode.BAD_REQUEST, resMessage.LOGIN_FAIL));        
     }
-    if (user[0].password !== password ) {
-        res.status(statusCode.BAD_REQUEST)
-        .send(util.fail(statusCode.BAD_REQUEST, resMessage.MISS_MATCH_PW));
-        return;
-    }
-    res.status(statusCode.OK)
-        .send(util.success(statusCode.OK, resMessage.LOGIN_SUCCESS, {userId: id}));
 });
 
 module.exports = router;
