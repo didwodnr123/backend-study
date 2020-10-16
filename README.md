@@ -19,12 +19,12 @@
 - [Javascript](#javascript)
 - [JSON](#json)
 - [Node.js](#nodejs)
-- [Flow Control](#flowcontrol)
+- [Flow-Control](#flowcontrol)
 - [Module](#module)
 - [Express](#express)
 - [HTTP](#http)
 - [CRUD](#crud)
-- [AWS EC2](#aws-ec2)
+- [AWS-EC2](#aws-ec2)
 
 📌 [Practice](./PRACTICE.md)
 
