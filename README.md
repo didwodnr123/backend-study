@@ -20,6 +20,7 @@
 - [JSON](#json)
 - [Node.js](#nodejs)
 - [Flow Control](#flowcontrol)
+
 - [Module](#module)
 - [Express](#express)
 - [HTTP](#http)
@@ -192,8 +193,8 @@ var 객체이름 = [
 
 <br/>
 
-<!-- flowcontrol -->
 
+<!-- flowcontrol -->
 ## Flow Control (흐름 제어)
 
 ***Blocking & Non-Blocking?***
