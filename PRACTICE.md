@@ -2,7 +2,7 @@
 
 > practical tutorial
 
-## Practice 01
+## Practice
 
 1. 요청 받고 응답주기
 2. 에러 처리
